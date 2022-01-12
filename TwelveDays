@@ -1,0 +1,51 @@
+public class TwelveDays {
+    String verse(int verseNumber) {
+        String[] count = {"first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"};
+
+        String[] gifts = {"and a Partridge in a Pear Tree.\n", "a Partridge in a Pear Tree.\n", "two Turtle Doves, ", "three French Hens, ", "four Calling Birds, ", "five Gold Rings, ", "six Geese-a-Laying, ", "seven Swans-a-Swimming, ", "eight Maids-a-Milking, ", "nine Ladies Dancing, ", "ten Lords-a-Leaping, ", "eleven Pipers Piping, ", "twelve Drummers Drumming, "};
+        String res = "On the " + count[verseNumber - 1] + " day of Christmas my true love gave to me: ";
+        switch (verseNumber) {
+            case 12:
+                res += gifts[12];
+            case 11:
+                res += gifts[11];
+            case 10:
+                res += gifts[10];
+            case 9:
+                res += gifts[9];
+            case 8:
+                res += gifts[8];
+            case 7:
+                res += gifts[7];
+            case 6:
+                res += gifts[6];
+            case 5:
+                res += gifts[5];
+            case 4:
+                res += gifts[4];
+            case 3:
+                res += gifts[3];
+            case 2:
+                res += gifts[2];
+            case 1:
+                res += (verseNumber == 1) ? gifts[1] : gifts[0];
+
+        }
+        return res;
+    }
+
+    String verses(int startVerse, int endVerse) {
+        String res = "";
+        while (startVerse < endVerse) {
+            res += verse(startVerse) + "\n";
+            startVerse++;
+        }
+        res += verse(endVerse);
+        return res;
+    }
+
+    String sing() {
+        return verses(1, 12);
+    }
+
+}
